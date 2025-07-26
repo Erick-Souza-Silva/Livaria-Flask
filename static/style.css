@@ -1,0 +1,246 @@
+
+/* Reset e configurações básicas */
+* {
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+}
+
+/* Configurações globais do body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna e legível */
+  line-height: 1.6; /* Altura da linha para melhor legibilidade */
+  color: #333; /* Cor do texto principal */
+}
+
+/* Customização da navbar */
+.navbar-brand {
+  font-size: 1.8rem !important; /* Tamanho maior para o logo */
+  color: #2c3e50 !important; /* Cor azul escura para o logo */
+}
+
+/* Efeito hover nos links da navbar */
+.navbar-nav .nav-link:hover {
+  color: #007bff !important; /* Cor azul no hover */
+  transition: color 0.3s ease; /* Transição suave */
+}
+
+/* Estilização da hero section */
+.hero-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Gradiente sutil */
+  min-height: 70vh; /* Altura mínima da seção */
+  display: flex; /* Flexbox para centralizar conteúdo */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* Estilização dos cards de produtos */
+.card {
+  border: none; /* Remove borda padrão */
+  border-radius: 15px; /* Bordas arredondadas */
+  transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+  overflow: hidden; /* Esconde conteúdo que ultrapassa as bordas */
+}
+
+/* Efeito hover nos cards */
+.card:hover {
+  transform: translateY(-10px); /* Move o card para cima */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important; /* Sombra mais intensa */
+}
+
+/* Estilização das imagens dos cards */
+.card-img-top {
+  transition: transform 0.3s ease; /* Transição suave para transformações */
+}
+
+/* Efeito zoom nas imagens ao hover */
+.card:hover .card-img-top {
+  transform: scale(1.05); /* Aumenta ligeiramente a imagem */
+}
+
+/* Estilização dos botões primários */
+.btn-primary {
+  background: linear-gradient(45deg, #007bff, #0056b3); /* Gradiente azul */
+  border: none; /* Remove borda */
+  border-radius: 25px; /* Bordas bem arredondadas */
+  padding: 10px 30px; /* Padding maior para melhor aparência */
+  font-weight: 600; /* Fonte em negrito */
+  transition: all 0.3s ease; /* Transição suave */
+}
+
+/* Efeito hover nos botões primários */
+.btn-primary:hover {
+  transform: translateY(-2px); /* Move ligeiramente para cima */
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3); /* Sombra azul */
+}
+
+/* Estilização dos botões outline */
+.btn-outline-primary {
+  border-radius: 25px; /* Bordas arredondadas */
+  font-weight: 600; /* Fonte em negrito */
+  transition: all 0.3s ease; /* Transição suave */
+}
+
+/* Estilização do footer */
+footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important; /* Gradiente escuro */
+}
+
+/* Links do footer */
+footer a:hover {
+  color: #007bff !important; /* Cor azul no hover */
+  transition: color 0.3s ease; /* Transição suave */
+}
+
+/* Estilização do badge do carrinho */
+.badge {
+  font-size: 0.7rem; /* Tamanho menor */
+  padding: 0.3em 0.6em; /* Padding adequado */
+}
+
+/* Estilização dos ícones grandes */
+.display-4 {
+  font-size: 3rem; /* Tamanho dos ícones na seção de vantagens */
+}
+
+/* Estilização do formulário de busca */
+.form-control {
+  border-radius: 20px; /* Bordas arredondadas */
+  border: 1px solid #dee2e6; /* Borda sutil */
+}
+
+/* Foco no campo de busca */
+.form-control:focus {
+  border-color: #007bff; /* Borda azul no foco */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra azul */
+}
+
+/* Estilização das seções */
+section {
+  padding: 4rem 0; /* Padding vertical para as seções */
+}
+
+/* Títulos das seções */
+.display-5 {
+  font-weight: 700; /* Fonte bem bold */
+  color: #2c3e50; /* Cor escura */
+}
+
+/* Texto muted personalizado */
+.text-muted {
+  color: #6c757d !important; /* Cor cinza mais clara */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 50vh; /* Altura menor em mobile */
+    text-align: center; /* Centraliza texto */
+  }
+  
+  .display-4 {
+    font-size: 2rem; /* Título menor em mobile */
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem !important; /* Logo menor em mobile */
+  }
+  
+  .btn-lg {
+    font-size: 1rem; /* Botões menores em mobile */
+    padding: 0.75rem 1.5rem; /* Padding menor */
+  }
+}
+
+/* Estilização específica para páginas de produto */
+.product-image {
+  border-radius: 15px; /* Bordas arredondadas nas imagens de produto */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Preço em destaque */
+.price-highlight {
+  font-size: 2rem; /* Tamanho grande para o preço */
+  font-weight: 700; /* Fonte bold */
+  color: #28a745; /* Cor verde para o preço */
+}
+
+/* Estilização da tabela do carrinho */
+.table {
+  border-radius: 15px; /* Bordas arredondadas */
+  overflow: hidden; /* Esconde bordas que ultrapassam */
+}
+
+/* Cabeçalho da tabela */
+.table thead th {
+  background-color: #f8f9fa; /* Fundo cinza claro */
+  border: none; /* Remove bordas */
+  font-weight: 600; /* Fonte semibold */
+}
+
+/* Células da tabela */
+.table td {
+  border: none; /* Remove bordas */
+  vertical-align: middle; /* Alinha verticalmente ao centro */
+}
+
+/* Estilização do formulário */
+.form-label {
+  font-weight: 600; /* Fonte semibold para labels */
+  color: #495057; /* Cor escura */
+}
+
+/* Campos de formulário */
+.form-control, .form-select {
+  border-radius: 10px; /* Bordas arredondadas */
+  border: 1px solid #dee2e6; /* Borda sutil */
+  padding: 0.75rem 1rem; /* Padding adequado */
+}
+
+/* Foco nos campos de formulário */
+.form-control:focus, .form-select:focus {
+  border-color: #007bff; /* Borda azul no foco */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra azul */
+}
+
+/* Estilização dos alerts */
+.alert {
+  border: none; /* Remove borda */
+  border-radius: 15px; /* Bordas arredondadas */
+  font-weight: 500; /* Fonte medium */
+}
+
+/* Animação de fade in */
+.fade-in {
+  animation: fadeIn 0.5s ease-in; /* Animação de entrada */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); } /* Estado inicial */
+  to { opacity: 1; transform: translateY(0); } /* Estado final */
+}
+
+/* Estilização dos breadcrumbs */
+.breadcrumb {
+  background: none; /* Remove fundo */
+  padding: 0; /* Remove padding */
+}
+
+.breadcrumb-item a {
+  color: #007bff; /* Cor azul para links */
+  text-decoration: none; /* Remove sublinhado */
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline; /* Adiciona sublinhado no hover */
+}
+
+/* Estilização da paginação */
+.pagination .page-link {
+  border-radius: 10px; /* Bordas arredondadas */
+  margin: 0 2px; /* Espaçamento entre botões */
+  border: none; /* Remove borda */
+  color: #007bff; /* Cor azul */
+}
+
+.pagination .page-item.active .page-link {
+  background: linear-gradient(45deg, #007bff, #0056b3); /* Gradiente azul */
+  border: none; /* Remove borda */
+}

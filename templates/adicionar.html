@@ -1,0 +1,55 @@
+{% extends "base/base.html" %}
+{% block titulo %}Adicionar Produto{% endblock %}
+{% block corpo %}
+<!-- CSRF proteção -->
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h2 class="mb-4">Adicionar Produto</h2>
+                    <!-- Nome do Produto -->
+                    <div class="mb-3">
+                        {{ form.nome.label(class="form-label") }}
+                        {{ form.nome(class="form-control") }}
+                    </div>
+                    <!-- Descrição do Produto -->
+                    <div class="mb-3">
+                        {{ form.descricao.label(class="form-label") }}
+                        {{ form.descricao(class="form-control") }}
+                    </div> 
+                    <!-- Preço do Produto -->
+                    <div class="mb-3">
+                        {{ form.preco.label(class="form-label") }}
+                        {{ form.preco(class="form-control") }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.categoria.label(class="form-label") }}
+                        {{ form.categoria(class="form-select") }}
+                    </div>
+                    <!-- Imagem do Produto -->
+                    <div class="mb-3">
+                        {{ form.imagem.label(class="form-label") }}
+                        {{ form.imagem(class="form-control") }}
+                    </div>
+                    <!-- Data de Criação -->
+                    <div class="mb-3">
+                        {{ form.data_criacao.label(class="form-label") }}
+                        {{ form.data_criacao(class="form-control") }}
+                    </div>
+                    <!-- estoque -->
+                    <div class="mb-3">
+                        {{ form.estoque.label(class="form-label") }}
+                        {{ form.estoque(class="form-control") }}
+                    </div>
+                    <!-- Botão de Envio -->
+                    <button type="submit" class="btn btn-primary">
+                        {{ form.submit(class="btn btn-primary") }}
+                    </button>
+                    <a href="{{ url_for('index') }}" class="btn btn-secondary">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

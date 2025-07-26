@@ -1,0 +1,23 @@
+{% extends "base/base.html" %}
+{% block titulo %}Categoria Editar{% endblock %}
+{% block corpo %}
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h2 class="mb-4">Editar Categoria - Produto: {{ produto.nome }}</h2>
+                    {% for categoria in produto.categorias %}
+                    <div class="mb-3">
+                        <h3>{{ categoria.nome }}</h3>
+                        <a href="{{ url_for('categoria_edicao', produto_id=produto.id, categoria_id=categoria.id ) }}" class="btn btn-danger">Editar</a>
+                        <a href="{{ url_for('categoria_deletar', produto_id=produto.id, categoria_id=categoria.id ) }}" class="btn btn-danger">Deletar</a>
+                        <hr></hr>
+                    </div>
+                    {% endfor %}
+                    <a href="{{ url_for('index') }}" class="btn btn-secondary">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </form>                
+{% endblock %}

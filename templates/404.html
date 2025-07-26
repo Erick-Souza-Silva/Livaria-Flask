@@ -1,0 +1,18 @@
+{% extends "base/base.html" %}
+{% block titulo %}Erro 404{% endblock %}
+{% block corpo %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <!-- Titulo de erro -->
+            <h1 class="display-1">404</h1>
+            <!-- Mensagem principal -->
+            <p class="lead">Página não encontrada.</p>
+            <!-- Detalhes do erro -->
+            <p class="mt-4">Desculpe, a página que você está tentando acessar não existe.</p>
+            <p>Por favor, verifique o URL e tente novamente.</p>
+            <p>Se você acredita que isso é um erro, por favor entre em contato conosco.</p>
+           <!-- Link para a pagina inicial -->
+           <a href="/" class="btn btn-primary"> Voltar para a página inicial</a>
+          
+{% endblock %}

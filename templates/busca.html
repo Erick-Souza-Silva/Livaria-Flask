@@ -1,0 +1,29 @@
+{% extends "base/base.html" %}
+{% block titulo %}Buscar{% endblock %}
+{% block corpo %}
+<!--Conteudo da pagina-->
+    <div class="container mt-5">
+        <h2 class="mb-4">Resultados da Busca</h2>
+        <div class="row">
+            {% for produto in produtos %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ url_for('arquivocarregado', arquivo=produto.imagem) }}" class="card-img-top" alt="{{ produto.titulo }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ produto.titulo }}</h5>
+                            <p class="card-text">{{ produto.descricao }}</p>
+                            <p class="card-text"><strong>Preço:</strong> R$ {{ produto.preco }}</p>
+                            <a href="{{ url_for('produto', id=produto.id) }}" class="btn btn-primary">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Voltar</a>
+     </div>
+
+                            
+
+                            
+          
+{% endblock %}

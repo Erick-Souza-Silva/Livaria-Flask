@@ -1,0 +1,61 @@
+{%extends "base/base.html"%}
+{%block titulo%}Adicionar Produto{%endblock%}
+{%block corpo%}
+<!-- CSRF proteção-->
+<form method="POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+        <h1 class="display-4">Editar Produto</h1>
+        <!-- Nome do produto-->
+        <div class="mb-3">
+            {{ form.nome.label(class="form-label") }}
+            {{ form.nome(class="form-control") }}
+        </div>
+        <!-- Nome do Descrição-->
+        <div class="mb-3">
+            {{ form.descricao.label(class="form-label") }}
+            {{ form.descricao(class="form-control") }}
+        </div>
+        <!-- Preço do Produto-->
+        <div class="mb-3">
+            {{ form.preco.label(class="form-label") }}
+            {{ form.preco(class="form-control") }}
+        </div>
+        <!-- Imagem do Produto-->
+        <div class="mb-3">
+            {% if produto.imagem%}
+            <img src="{{url_for('arquivocarregado', arquivo=produto.imagem)}}" class="img-fluid mb-3" alt="{{produto.nome}}">
+            {%endif%}
+            {{ form.imagem.label(class="form-label") }}
+            {{ form.imagem(class="form-control") }}
+        </div>
+        <!-- Botão de Estoque-->
+        <div class="mb-3">
+            {{ form.estoque.label(class="form-label") }}
+            {{ form.estoque(class="form-control") }}
+        </div>
+          
+        <!-- Data de criação do Produto-->
+        <div class="mb-3">
+            {{ form.data_criacao.label(class="form-label") }}
+            {{ form.data_criacao(class="form-control") }}
+        </div>
+        <!-- Botão Deletar-->
+        <a href=" {{ url_for('deletar', id=produto.id) }}" class="btn btn-danger"> Deletar </a>   
+        <!-- Botão de Enviar-->
+        <button type="submit" class="btn btn-primary">
+            {{form.submit(class="btn btn-primary")}}
+        </button>
+        <!-- Botão Voltar-->
+        <a href="/" class="btn btn-secondary"> voltar</a>
+        </div>
+        </div>
+    </div>
+</div>
+</form>
+
+               
+                
+{% endblock %}

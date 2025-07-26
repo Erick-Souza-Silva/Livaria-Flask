@@ -1,0 +1,93 @@
+{% extends "base/base.html" %}
+{% block titulo %}sua biblioteca virtual{% endblock %}
+{% block corpo %}
+<!-- Hero Section - Seção principal destacada -->
+<section class="hero-section bg-light py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <!-- Texto principal da hero section -->
+                <h1 class="display-4 fw-bold mb-4">Descubra seu próximo livro favorito</h1>
+                <p class="lead mb-4">Milhares de títulos com entrega rápida e os melhores preços do mercado.</p>
+                <a href="{{url_for('categoria')}}" class="btn btn-primary btn-lg me-3">Explorar Catálogo</a>
+                <a href="sobre.html" class="btn btn-outline-primary btn-lg">Saiba Mais</a>
+            </div>
+            <div class="col-lg-6">
+                <!-- Imagem ilustrativa -->
+                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                     alt="Biblioteca" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de Livros em Destaque -->
+<section class="py-5">
+    <div class="container">
+        <!-- Título da seção -->
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="display-5 fw-bold mb-3">Livros em Destaque</h2>
+                <p class="lead text-muted">Os títulos mais procurados pelos nossos clientes</p>
+            </div>
+        </div>
+
+        <!-- Grid de livros em destaque -->
+        <div class="row g-4">
+            {% for produto in produtos %}
+            <!-- Loop para exibir cada produto -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{url_for('arquivocarregado', arquivo=produto.imagem)}}" 
+                         class="card-img-top" alt="{{produto.nome}}" style="height: 300px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{produto.nome}}</h5>
+                        <p class="card-text text-muted">{{produto.descricao}}</p>
+                        <p class="card-text"><strong>{{produto.preco}}</strong></p>
+                        <a href="{{url_for('produto', id=produto.id)}}" class="btn btn-primary mt-auto">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>
+
+            
+            {%endfor%}
+        </div>
+    </div>
+</section>
+
+<!-- Seção de Vantagens -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Vantagem 1 -->
+            <div class="col-lg-4 text-center">
+                <div class="p-4">
+                    <i class="bi bi-truck display-4 text-primary mb-3"></i>
+                    <h4>Frete Grátis</h4>
+                    <p class="text-muted">Para compras acima de R$ 99,00 em todo o Brasil</p>
+                </div>
+            </div>
+
+            <!-- Vantagem 2 -->
+            <div class="col-lg-4 text-center">
+                <div class="p-4">
+                    <i class="bi bi-shield-check display-4 text-primary mb-3"></i>
+                    <h4>Compra Segura</h4>
+                    <p class="text-muted">Seus dados protegidos com criptografia SSL</p>
+                </div>
+            </div>
+
+            <!-- Vantagem 3 -->
+            <div class="col-lg-4 text-center">
+                <div class="p-4">
+                    <i class="bi bi-arrow-return-left display-4 text-primary mb-3"></i>
+                    <h4>Troca Fácil</h4>
+                    <p class="text-muted">30 dias para trocas e devoluções sem complicação</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+   <a href="/adicionar" class="btn btn-primary mt-4 mb-4 btn-lg btn-block"> <i class="bi bi-plus-circle"></i></a>
+
+{% endblock %}
